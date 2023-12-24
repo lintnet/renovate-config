@@ -24,5 +24,21 @@
         "^ *local .*= *import \"(?<depName>github\\.com/(?<packageName>[^'\" .@/\\n]+/[^'\" @/\\n]+)(/[^'\" /@\\n]+)*)@(?<currentValue>[^'\" @/\\n]+)\"",
       ],
     },
+    {
+      fileMatch: [
+        '^renovate\\.json5?$',
+        '^\\.github/renovate\\.json5?$',
+        '^\\.gitlab/renovate\\.json5?$',
+        '^\\.renovaterc\\.json$',
+        '^\\.renovaterc$',
+      ],
+      matchStrings: [
+        '"github>lintnet/renovate-config#(?<currentValue>[^" \\n\\(]+)',
+        '"github>lintnet/renovate-config:.*#(?<currentValue>[^" \\n\\(]+)',
+        '"github>lintnet/renovate-config/.*#(?<currentValue>[^" \\n\\(]+)',
+      ],
+      datasourceTemplate: 'github-releases',
+      depNameTemplate: 'lintnet/renovate-config',
+    },
   ],
 }
