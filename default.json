@@ -1,0 +1,26 @@
+{
+   "customManagers": [
+      {
+         "customType": "regex",
+         "datasourceTemplate": "github-releases",
+         "fileMatch": [
+            "\\.?lintnet\\.ya?ml$"
+         ],
+         "matchStrings": [
+            "(?<depName>github\\.com/(?<packageName>[^'\" .@/\\n]+/[^'\" @/\\n]+)(/[^'\" /@\\n]+)+)@(?<currentValue>[^'\" @/\\n]+)"
+         ]
+      },
+      {
+         "customType": "regex",
+         "datasourceTemplate": "github-releases",
+         "fileMatch": [
+            "\\.jsonnet$",
+            "\\.libsonnet$"
+         ],
+         "matchStrings": [
+            "^ *local .*= *import '(?<depName>github\\.com/(?<packageName>[^'\" .@/\\n]+/[^'\" @/\\n]+)(/[^'\" /@\\n]+)*)@(?<currentValue>[^'\" @/\\n]+)'",
+            "^ *local .*= *import \"(?<depName>github\\.com/(?<packageName>[^'\" .@/\\n]+/[^'\" @/\\n]+)(/[^'\" /@\\n]+)*)@(?<currentValue>[^'\" @/\\n]+)\""
+         ]
+      }
+   ]
+}
