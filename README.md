@@ -2,6 +2,10 @@
 
 Renovate Config Preset to update lintnet Modules
 
+## Presets
+
+- [default.json](default.json)
+
 ## Usage
 
 ```json
