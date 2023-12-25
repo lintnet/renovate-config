@@ -4,7 +4,7 @@
          "customType": "regex",
          "datasourceTemplate": "github-releases",
          "fileMatch": [
-            "\\.?lintnet\\.ya?ml$"
+            "\\.?lintnet\\.jsonnet$"
          ],
          "matchStrings": [
             "(?<depName>github\\.com/(?<packageName>[^'\" .@/\\n]+/[^'\" @/\\n]+)(/[^'\" /@\\n]+)+)@(?<currentValue>[^'\" @/\\n]+)"
