@@ -1,4 +1,4 @@
-local modulePattern = "(?<depName>github\\.com/(?<packageName>[^'\" .@/\\n]+/[^'\" @/\\n]+)(/[^'\" /@\\n]+)+)@(?<currentDigest>[0-9a-fA-F]{40}):(?<currentValue>[^'\" @/\\n]+)";
+local modulePattern = "github_archive/(?<depName>github\\.com/(?<packageName>[^'\" .@/\\n]+/[^'\" @/\\n]+)(/[^'\" /@\\n]+)+)@(?<currentDigest>[0-9a-fA-F]{40}):(?<currentValue>[^'\" @/\\n]+)";
 
 {
   customManagers: [
@@ -9,7 +9,7 @@ local modulePattern = "(?<depName>github\\.com/(?<packageName>[^'\" .@/\\n]+/[^'
         '\\.?lintnet\\.jsonnet$',
       ],
       matchStrings: [
-        // github.com/suzuki-shunsuke/tfcmt/examples/lint/csv.jsonnet@ebd3c7221bf26d51d3cdd0838844dcf14d28ba80:v4.7.0
+        // github_archive/github.com/suzuki-shunsuke/tfcmt/examples/lint/csv.jsonnet@ebd3c7221bf26d51d3cdd0838844dcf14d28ba80:v4.7.0
         modulePattern,
       ],
     },
@@ -21,7 +21,7 @@ local modulePattern = "(?<depName>github\\.com/(?<packageName>[^'\" .@/\\n]+/[^'
         '\\.libsonnet$',
       ],
       matchStrings: [
-        // local hello = import 'github.com/suzuki-shunsuke/tfcmt/examples/lint/csv.jsonnet@ebd3c7221bf26d51d3cdd0838844dcf14d28ba80:v4.7.0';
+        // local hello = import 'github_archive/github.com/suzuki-shunsuke/tfcmt/examples/lint/csv.jsonnet@ebd3c7221bf26d51d3cdd0838844dcf14d28ba80:v4.7.0';
         "^ *local .*= *import '%s'" % [modulePattern],
         '^ *local .*= *import "%s"' % [modulePattern],
       ],
