@@ -5,6 +5,7 @@ Renovate Config Preset to update lintnet Modules
 ## Presets
 
 - [default.json](default.json)
+- [file.json](file.json)
 
 ## Usage
 
@@ -12,6 +13,16 @@ Renovate Config Preset to update lintnet Modules
 {
   "extends": [
     "github>lintnet/renovate-config#0.1.0"
+  ]
+}
+```
+
+If you want to change fileMatch, the preset `file` is useful.
+
+```json
+{
+  "extends": [
+    "github>lintnet/renovate-config#0.1.1(README\\.md)"
   ]
 }
 ```
