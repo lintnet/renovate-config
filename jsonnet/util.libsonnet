@@ -1,4 +1,4 @@
-local modulePattern = "github_archive/(?<depName>github\\.com/(?<packageName>[^'\" .@/\\n]+/[^'\" @/\\n]+)(/[^'\" /@\\n]+)?)@(?<currentDigest>[0-9a-fA-F]{40}):(?<currentValue>[^'\" @/\\n]+)";
+local modulePattern = "github_archive/(?<depName>github\\.com/(?<packageName>[^'\" .@/\\n]+/[^'\" @/\\n]+)(/[^'\" @\\n]+)?)@(?<currentDigest>[0-9a-fA-F]{40}):(?<currentValue>[^'\" @/\\n]+)";
 
 {
   config(fileMatch=[
