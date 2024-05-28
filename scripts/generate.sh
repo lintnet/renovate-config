@@ -3,5 +3,6 @@
 set -eu
 
 while read -r file; do
-	jsonnet -o "${file%net}" "jsonnet/$file"
-done < <(ls jsonnet)
+	file_name="${file#jsonnet/}"
+	jsonnet -o "${file_name%net}" "$file"
+done < <(ls jsonnet/*.jsonnet)

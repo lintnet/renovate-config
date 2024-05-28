@@ -1,47 +1,8 @@
 {
   extends: [
-    "config:recommended",
-    "helpers:pinGitHubActionDigests",
     "github>aquaproj/aqua-renovate-config#2.3.0",
+    "github>aquaproj/aqua-renovate-config:file#2.3.0(aqua/imports/.*\\.ya?ml)",
+    "github>suzuki-shunsuke/renovate-config#2.4.0",
+    "github>suzuki-shunsuke/renovate-config:nolimit#2.4.0",
   ],
-  automerge: true,
-  platformAutomerge: true,
-  prHourlyLimit: 0,
-  prConcurrentLimit: 0,
-  branchConcurrentLimit: 0,
-  customManagers: [
-    {
-      fileMatch: ["README\\.md"],
-      matchStrings: [
-        "(version|ref): \"?(?<currentValue>.*)\"? +# renovate: depName=(?<depName>.*)"
-      ],
-      datasourceTemplate: "github-releases",
-    },
-    {
-      fileMatch: ["README\\.md"],
-      "matchStrings": [
-        "\"github>aquaproj/aqua-renovate-config#(?<currentValue>[^\" \\n\\(]+)",
-        "\"github>aquaproj/aqua-renovate-config:.*#(?<currentValue>[^\" \\n\\(]+)",
-        "\"github>aquaproj/aqua-renovate-config/.*#(?<currentValue>[^\" \\n\\(]+)"
-      ],
-      "datasourceTemplate": "github-releases",
-      "depNameTemplate": "aquaproj/aqua-renovate-config"
-    },
-    {
-      fileMatch: ["README\\.md"],
-      "matchStrings": [
-        " +['\"]?aqua_version['\"]? *: +['\"]?(?<currentValue>[^'\" \\n]+)['\"]?"
-      ],
-      "depNameTemplate": "aquaproj/aqua",
-      "datasourceTemplate": "github-releases"
-    },
-    {
-      fileMatch: ["README\\.md"],
-      "matchStrings": [
-        "raw\\.githubusercontent\\.com/aquaproj/aqua-installer/(?<currentValue>.*?)/aqua-installer"
-      ],
-      "datasourceTemplate": "github-releases",
-      "depNameTemplate": "aquaproj/aqua-installer"
-    }
-  ]
 }
