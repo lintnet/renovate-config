@@ -23,6 +23,7 @@
          ]
       },
       {
+         "customType": "regex",
          "datasourceTemplate": "github-releases",
          "depNameTemplate": "lintnet/renovate-config",
          "fileMatch": [

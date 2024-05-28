@@ -32,13 +32,14 @@ local modulePattern = "github_archive/(?<depName>github\\.com/(?<packageName>[^'
     '^\\.renovaterc\\.json$',
     '^\\.renovaterc$',
   ]): {
+    customType: 'regex',
+    datasourceTemplate: 'github-releases',
+    depNameTemplate: 'lintnet/renovate-config',
     fileMatch: fileMatch,
     matchStrings: [
       '"github>lintnet/renovate-config#(?<currentValue>[^" \\n\\(]+)',
       '"github>lintnet/renovate-config:.*#(?<currentValue>[^" \\n\\(]+)',
       '"github>lintnet/renovate-config/.*#(?<currentValue>[^" \\n\\(]+)',
     ],
-    datasourceTemplate: 'github-releases',
-    depNameTemplate: 'lintnet/renovate-config',
   },
 }
