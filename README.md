@@ -22,7 +22,7 @@ If you want to change fileMatch, the preset `file` is useful.
 ```json
 {
   "extends": [
-    "github>lintnet/renovate-config#0.1.1(README\\.md)"
+    "github>lintnet/renovate-config:file#0.1.1(README\\.md)"
   ]
 }
 ```
