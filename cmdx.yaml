@@ -19,3 +19,7 @@ tasks:
     description: Generate presets from Jsonnet
     usage: Generate presets from Jsonnet
     script: bash scripts/generate.sh
+  - name: validate
+    description: Validate renovate config and presets
+    usage: Validate renovate config and presets
+    script: bash scripts/validate.sh
