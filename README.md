@@ -2,6 +2,8 @@
 
 Renovate Config Preset to update lintnet Modules
 
+e.g. [lintnet/examples#131](https://github.com/lintnet/examples/pull/131)
+
 ## Presets
 
 - [default.json](default.json)
